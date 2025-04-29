@@ -1,4 +1,5 @@
-Project Description
+Project Description       
+
 AirLink: Airline Reservation and Management System is a Java-based desktop application developed using Apache NetBeans IDE. The system facilitates the complete management of an airline's operations like flight booking, customer management, flight details, billing, and ticket cancellation.
 The application uses MySQL as the backend database to store and retrieve all airline-related information efficiently. The database connection is established through JDBC.
 
