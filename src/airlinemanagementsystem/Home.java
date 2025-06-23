@@ -77,22 +77,9 @@ public class Home extends JFrame implements ActionListener {
         } else if (text.equals("Flight Details")) {
             new FlightInfo();
         } else if (text.equals("Book Flight")) {
-            String input = JOptionPane.showInputDialog("How many seats do you want to book?");
-            int numOfSeats;
-
-            try {
-                numOfSeats = Integer.parseInt(input);
-                if (numOfSeats <= 0) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Please enter a valid positive number");
-                return;
-            }
-
-            for (int i = 1; i <= numOfSeats; i++) {
-                new BookFlight(i);
-            }
+           
+                new BookFlight();
+            
         } else if (text.equals("Journey Details")) {
             new JourneyDetails();
         } else if (text.equals("Cancel Ticket")) {
