@@ -8,16 +8,19 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+
 
 
 public class BookFlight extends JFrame implements ActionListener{
-    private static int seatno;
+    
     JTextField tfaadhar;
     JLabel tfname, tfnationality, tfaddress, labelgender, labelfname, labelfcode,labeltiming,labelprice;
     JButton bookflight, fetchButton, flight;
     Choice source,destination;
     JDateChooser dcdate;
-     public BookFlight( int seatno) {
+     public BookFlight() {
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
         
@@ -267,6 +270,7 @@ public class BookFlight extends JFrame implements ActionListener{
         return;
     }
 
+  
 String pnr = "PNR-" + random.nextInt(1000000);
 String ticket = "TIC-" + random.nextInt(10000);
 
@@ -284,6 +288,7 @@ Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection
 
 // Hide the form or return to home
 setVisible(false);
+
             
 }         catch (Exception e) {
             e.printStackTrace();
@@ -294,7 +299,7 @@ setVisible(false);
     }
 
 public static void main(String []args){
-    new BookFlight(seatno);
+    new BookFlight();
 
 }
 
