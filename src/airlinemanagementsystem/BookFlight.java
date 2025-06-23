@@ -267,12 +267,23 @@ public class BookFlight extends JFrame implements ActionListener{
         return;
     }
 
-            String query = "insert into reservation values('PNR-"+random.nextInt(1000000)+"', 'TIC-"+random.nextInt(10000)+"', '"+aadhar+"', '"+name+"', '"+nationality+"', '"+flightname+"', '"+flightcode+"', '"+src+"', '"+dest+"', '"+ddate+"','"+timing+"','"+price+"' )";
-        
-             c.s.executeUpdate(query);
-           
-             JOptionPane.showMessageDialog(null, "Ticket booked Successfully");
-              setVisible(false);
+String pnr = "PNR-" + random.nextInt(1000000);
+String ticket = "TIC-" + random.nextInt(10000);
+
+// Your other variables like aadhar, name, etc., remain the same
+
+String query = "INSERT INTO reservation VALUES('" + pnr + "', '" + ticket + "', '" + aadhar + "', '" + name + "', '" + nationality + "', '" + flightname + "', '" + flightcode + "', '" + src + "', '" + dest + "', '" + ddate + "', '" + timing + "', '" + price + "')";
+
+c.s.executeUpdate(query);
+
+// Show the PNR in a dialog box
+JOptionPane.showMessageDialog(null, "Ticket Booked Successfully!\nYour PNR: " + pnr);
+
+// Optionally, copy it to clipboard
+Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(pnr), null);
+
+// Hide the form or return to home
+setVisible(false);
             
 }         catch (Exception e) {
             e.printStackTrace();
